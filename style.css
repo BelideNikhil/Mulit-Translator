@@ -1,30 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-}
-:root{
-    --max-width:600px
+    font-family: Bungee;
+    line-height: 1.8rem;
+    font-weight: 600;
 }
 body{
+    background: url("https://ejournalz.com/wp-content/uploads/2019/05/trans.jpg") no-repeat center center/cover;
+    text-align: center;
+    position: relative;
+    padding-top: 30px ;
+}
+
+body::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background: #333;
+}
+
+input,textarea:focus{
+    outline: none;
+}
+#header,#footer{
+    text-decoration: underline 2px solid;
+    color: rgb(11, 13, 15);
+    padding: 20px 0;
+}
+#tester
+{
+    color: rgb(109, 72, 179);
+}
+
+.hero{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+.hero .container{
     display: flex;
     justify-content: center;
     align-items: center;
-    height:100vh;
+    background:rgb(75, 73, 73);
+    border-radius: 2px;
+    flex-direction: column;
+    padding:30px 20px;
+    opacity: 0.95;
+    box-shadow: 8px 8px rgb(27, 27, 27) ;
+    border: 2px solid black;
 }
-.content{
-    display: flex;
-    flex-direction: row;
-    width:var(--max-width);
-    padding: 20px;
+.hero .container >*{
+    margin-bottom: 15px;
+    padding: 6px 8px;
+    border: 0.8px solid rgb(24, 23, 23);
+    border-radius: 3px;
+    min-width: 380px;
+    background:whitesmoke;
+    min-height: 30px;
+    box-shadow: 2px 2px black; 
 }
-.content >*{
-    margin: 20px 5px;
-    min-width:200px;
-    min-height: 100px;
-    padding: 25px 10px;
+#translator{
+    font-weight: 600;
 }
-#output{
-    border: 2px solid;
-    overflow:auto;
+#translator:hover{
+    color: wheat;
+    background: #333;
+    transform:translateY(1px);
+    transition: 0.4s ease-in-out;
 }
