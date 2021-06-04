@@ -3,14 +3,15 @@ var input_text=document.querySelector("#textarea");
 var translate_btn=document.querySelector("#translator");
 var output_catch=document.querySelector("#output");
 var chooser=document.querySelector("#choose")
-var tester=document.querySelector("#tester")
+let tester=document.querySelector("#tester")
 var keys="";
 
 // ===========================storage========================
 var storageURL=[{k:"minion",u:"https://api.funtranslations.com/translate/minion.json"},
 {k:"yoda",u:"https://api.funtranslations.com/translate/yoda.json"},
 {k:"morse",u:"https://api.funtranslations.com/translate/morse.json"},
-{k:"wakandan",u:"https://api.funtranslations.com/translate/wakandan.json"}
+{k:"wakandan",u:"https://api.funtranslations.com/translate/wakandan.json"},
+{k:"avatar",u:"https://api.funtranslations.com/translate/navi.json"}
 ]
 
 var serverURL;
@@ -25,9 +26,10 @@ chooser.addEventListener('keypress', function (e) {
                 tester.innerHTML=holder + " translator enabled"
                 console.log("pass")
                 serverURL=storageURL[i].u
-                console.log( serverURL)
-            }  
+                return serverURL
+            }
         }
+        return tester.innerHTML=" We dont translate this language yet";
     }
 });
 // ======================fina url creator==========================
