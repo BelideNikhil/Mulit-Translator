@@ -12,6 +12,11 @@ body{
     text-align: center;
     position: relative;
     padding-top: 30px ;
+    overflow: auto;
+    margin: auto;
+}
+ul{
+    list-style: none;
 }
 
 body::before{
@@ -31,7 +36,7 @@ input,textarea:focus{
 #header,#footer{
     text-decoration: underline 2px solid;
     color: rgb(11, 13, 15);
-    padding: 20px 0;
+    padding: 20px;
 }
 #tester
 {
@@ -43,7 +48,8 @@ input,textarea:focus{
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 50px;
+    margin-bottom: auto;
+    margin: auto;
 }
 .hero .container{
     display: flex;
@@ -56,16 +62,21 @@ input,textarea:focus{
     opacity: 0.95;
     box-shadow: 8px 8px rgb(27, 27, 27) ;
     border: 2px solid black;
+    width: 600px;
 }
 .hero .container >*{
     margin-bottom: 15px;
     padding: 6px 8px;
     border: 0.8px solid rgb(24, 23, 23);
     border-radius: 3px;
-    min-width: 380px;
+    width: 100%;
     background:whitesmoke;
-    min-height: 30px;
+    min-height: 40px;
     box-shadow: 2px 2px black; 
+}
+
+#output{
+    min-height: 130px;
 }
 #translator{
     font-weight: 600;
@@ -76,3 +87,15 @@ input,textarea:focus{
     transform:translateY(1px);
     transition: 0.4s ease-in-out;
 }
+.data{
+    padding: 50px 30px;
+}
+
+/* mobile */
+@media screen and (max-width:650px) {
+    .hero .container{
+        width:400px;
+    }
+
+}
+
