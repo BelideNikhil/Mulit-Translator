@@ -13,36 +13,29 @@
 <body>
    <header id="header">
     <div>
-        <h1>The Multilingual Translator</h1>
+        <h2>The Multilingual Translator</h2>
         <br>
         <h3>This converts the entered data into the language that you want</h3>
-    </div>
-   </header>
-   
-   
-    <section class="hero">
-        <div class="container">
-            
-            <input type="text" name="" id="choose" placeholder="Choose a language and hit enter">
-            <label for="" id="tester"></label>
-            <textarea name="inputDabba" id="textarea"  placeholder="Enter the data that you want to translate" rows="4" ></textarea>
-            <div id="output"></div>
-            
-        <button id="translator"><i class="fas fa-language"></i>Translate</button>
-        </div>
-    </section>
-    <div class="data">
-        <p>Once you enter, if translator is present, a box will show saying 'ENABLED'</p>
-        <br>
-         <p>This can covert to below 5 languages for now. Enter a language and hit Enter</p>
-         <ul>
-            <li>minion</li>
-            <li>yoda</li>
-            <li>avatar</li>
-            <li>morse</li>
-            <li>wakandan</li>
+        <ul>
+            <li><a href="./rules.html" id="page"><i class="fas fa-exclamation-triangle"></i>Rules</a></li>
         </ul>
     </div>
+   </header>
+    <section class="hero">
+        <div class="container">
+            <div id="box1">
+                <input type="text"  id="choose" placeholder="Choose a language">
+                <input type="button" value="SELECT" class="btn" id="select">
+                <label for="" id="tester"></label>
+            </div>
+            <div id="box2">
+                <textarea name="inputDabba" id="textarea"  placeholder="Enter the data that you want to translate" rows="4" ></textarea>
+                <input type="button" value="Translate" id="translator"class="btn">
+                <div id="output"></div>
+            </div>
+        </div>
+    </section>
+    
     <footer id="footer">
        <div> Made by Nikhil Belide with <i class="fas fa-heart"></i></div>
     </footer>

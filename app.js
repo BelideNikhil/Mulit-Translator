@@ -1,9 +1,13 @@
 console.log("hello")
+
+
+var chooser=document.querySelector("#choose")
+var select=document.querySelector("#select")
+let tester=document.querySelector("#tester")
+
 var input_text=document.querySelector("#textarea");
 var translate_btn=document.querySelector("#translator");
 var output_catch=document.querySelector("#output");
-var chooser=document.querySelector("#choose")
-let tester=document.querySelector("#tester")
 var keys="";
 
 // ===========================storage========================
@@ -16,21 +20,18 @@ var storageURL=[{k:"minion",u:"https://api.funtranslations.com/translate/minion.
 
 var serverURL;
 // =========================translator chooser=================
-chooser.addEventListener('keypress', function (e) {
-    
-    if (e.key === 'Enter') {
-        keys=chooser.value;
-        for(var i=0;i<storageURL.length;i++){
-            var holder=storageURL[i].k;
-            if(keys.toUpperCase()===holder.toUpperCase()){
-                tester.innerHTML=holder + " translator enabled"
-                console.log("pass")
-                serverURL=storageURL[i].u
-                return serverURL
-            }
+select.addEventListener('click', function () {
+    keys=chooser.value;
+    for(var i=0;i<storageURL.length;i++){
+        var holder=storageURL[i].k;
+        if(keys.toUpperCase()===holder.toUpperCase()){
+            tester.innerHTML=" translator enabled"
+            console.log("pass")
+            serverURL=storageURL[i].u
+            return serverURL
         }
-        return tester.innerHTML=" We dont translate this language yet";
     }
+        return tester.innerHTML=" We dont have this translator";
 });
 // ======================fina url creator==========================
 function createURL(){
