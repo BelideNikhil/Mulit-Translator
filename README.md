@@ -1,3 +1,9 @@
 ## multiTranslator
-###A translator can can convert to 5 languages!
+### This can covert to below 5 languages for now. Enter a language and hit Enter
+
+    minion
+    yoda
+    avatar
+    morse
+    wakandan
 
