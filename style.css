@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: Bungee;
+    font-family: Nunito;
     line-height: 1.8rem;
-    font-weight: 600;
 }
 body{
     background: url("https://www.geartranslations.com/blog/img/estrategias-de-traduccion.png") no-repeat center center/cover;
@@ -13,7 +12,6 @@ body{
     position: relative;
     overflow: auto;
     margin: auto;
-    height: 100vh;
 }
 ul{
     list-style: none;
@@ -21,6 +19,7 @@ ul{
 a{
     text-decoration: none;
     color: black;
+    
 }
 
 input[type='text'],textarea:focus{
@@ -34,15 +33,14 @@ header,footer{
 }
 #tester
 {
-    color: rgb(52, 202, 72);
+    color: rgb(14, 175, 36);
 }
-#page{
-    color: rgb(238, 158, 9);
+.btn{
+    padding: 10px 0;
+    font-weight: 800;
 }
 .btn:hover{
-    background: #333;
-    color: rgb(201, 118, 218);
-    transform: scale(1);
+    color: rgb(178, 6, 212);
 }
 .hero{
     display: flex;
@@ -81,9 +79,9 @@ header,footer{
     gap: 10px;
 }
 #box2{
-    display: grid;
     grid-template-columns: 1fr;
     gap: 8px;
+    display: none;
 }
 #output{
     min-height: 130px;
@@ -91,6 +89,9 @@ header,footer{
 }
 .data{
     padding: 50px 30px;
+}
+#page{
+    color: rgb(238, 74, 9);
 }
 /* mobile */
 @media screen and (max-width:650px) {
