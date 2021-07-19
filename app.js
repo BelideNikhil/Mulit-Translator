@@ -8,10 +8,11 @@ let tester=document.querySelector("#tester")
 var input_text=document.querySelector("#textarea");
 var translate_btn=document.querySelector("#translator");
 var output_catch=document.querySelector("#output");
-var keys="";
+const hidden=document.querySelector("#box2")
 
 // ===========================storage========================
-var storageURL=[{k:"minion",u:"https://api.funtranslations.com/translate/minion.json"},
+var storageURL=[
+{k:"minion",u:"https://api.funtranslations.com/translate/minion.json"},
 {k:"yoda",u:"https://api.funtranslations.com/translate/yoda.json"},
 {k:"morse",u:"https://api.funtranslations.com/translate/morse.json"},
 {k:"wakandan",u:"https://api.funtranslations.com/translate/wakandan.json"},
@@ -21,32 +22,34 @@ var storageURL=[{k:"minion",u:"https://api.funtranslations.com/translate/minion.
 var serverURL;
 // =========================translator chooser=================
 select.addEventListener('click', function () {
-    keys=chooser.value;
-    for(var i=0;i<storageURL.length;i++){
-        var holder=storageURL[i].k;
-        if(keys.toUpperCase()===holder.toUpperCase()){
-            tester.innerHTML=" translator enabled"
-            console.log("pass")
-            serverURL=storageURL[i].u
-            return serverURL
+    let keys=chooser.value;
+    if(keys!=''){
+        hidden.style.display="grid";
+        for(var i=0;i<storageURL.length;i++){
+            var holder=storageURL[i].k;
+            if(keys.toUpperCase()===holder.toUpperCase()){
+                tester.innerHTML=" translator enabled"
+                console.log("pass")
+                serverURL=storageURL[i].u
+                return serverURL
+            }
         }
+            return tester.innerHTML=" We dont have this translator yet";
+    }else{
+        return tester.innerHTML="Please select a translator from below";
     }
-        return tester.innerHTML=" We dont have this translator";
 });
 // ======================fina url creator==========================
 function createURL(){
-   return serverURL +"?"+"text=" +input_text.value
+   return serverURL +"?"+"text=" +input_text.value;
 }
 
 function errorHandler(error) {
     console.log("error occured", error);
-    alert("something wrong with server! try again after some time")
+    tester.innerHTML="Something wrong with server!Please try after some time."
 }
 translate_btn.addEventListener("click", ()=>{
-    
-    translate_btn.innerHTML="Your data is being translated..."
-    setTimeout(()=>{
-        translate_btn.innerHTML="Translate"},1500);
+    translate_btn.innerHTML="Translate";
         fetch(createURL(input_text.value))
        .then(response =>response.json())
        .then(json=>{
