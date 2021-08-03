@@ -1,17 +1,14 @@
-console.log("hello")
-
-
-var chooser=document.querySelector("#choose")
-var select=document.querySelector("#select")
+let chooser=document.querySelector("#choose")
+const select=document.querySelector("#select")
 let tester=document.querySelector("#tester")
 
 var input_text=document.querySelector("#textarea");
-var translate_btn=document.querySelector("#translator");
-var output_catch=document.querySelector("#output");
+const translate_btn=document.querySelector("#translator");
+var output=document.querySelector("#output");
 const hidden=document.querySelector("#box2")
 
 // ===========================storage========================
-var storageURL=[
+let storageURL=[
 {k:"minion",u:"https://api.funtranslations.com/translate/minion.json"},
 {k:"yoda",u:"https://api.funtranslations.com/translate/yoda.json"},
 {k:"morse",u:"https://api.funtranslations.com/translate/morse.json"},
@@ -19,14 +16,14 @@ var storageURL=[
 {k:"avatar",u:"https://api.funtranslations.com/translate/navi.json"}
 ]
 
-var serverURL;
+let serverURL;
 // =========================translator chooser=================
 select.addEventListener('click', function () {
     let keys=chooser.value;
     if(keys!=''){
         hidden.style.display="grid";
-        for(var i=0;i<storageURL.length;i++){
-            var holder=storageURL[i].k;
+        for(let i=0;i<storageURL.length;i++){
+            let holder=storageURL[i].k;
             if(keys.toUpperCase()===holder.toUpperCase()){
                 tester.innerHTML=" translator enabled"
                 console.log("pass")
@@ -46,14 +43,14 @@ function createURL(){
 
 function errorHandler(error) {
     console.log("error occured", error);
-    tester.innerHTML="Something wrong with server!Please try after some time."
+    output.innerHTML="Something is wrong with the server!Please try again later."
 }
 translate_btn.addEventListener("click", ()=>{
     translate_btn.innerHTML="Translate";
         fetch(createURL(input_text.value))
        .then(response =>response.json())
        .then(json=>{
-           output_catch.innerText = json.contents.translated;
+        output.innerText = json.contents.translated;
         })
         .catch(errorHandler)
 })
