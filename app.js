@@ -1,11 +1,11 @@
-let chooser=document.querySelector("#choose")
+let translate_type=document.querySelector("#translate_type")
 const select=document.querySelector("#select")
-let tester=document.querySelector("#tester")
+let chosen_type=document.querySelector("#chosen_type")
 
 var input_text=document.querySelector("#textarea");
-const translate_btn=document.querySelector("#translator");
+const translator=document.querySelector("#translator");
 var output=document.querySelector("#output");
-const hidden=document.querySelector("#box2")
+const box2=document.querySelector("#box2")
 
 // ===========================storage========================
 let storageURL=[
@@ -19,21 +19,20 @@ let storageURL=[
 let serverURL;
 // =========================translator chooser=================
 select.addEventListener('click', function () {
-    let keys=chooser.value;
+    let keys=translate_type.value;
     if(keys!=''){
-        hidden.style.display="grid";
+        box2.style.display="grid";
         for(let i=0;i<storageURL.length;i++){
             let holder=storageURL[i].k;
             if(keys.toUpperCase()===holder.toUpperCase()){
-                tester.innerHTML=" translator enabled"
-                console.log("pass")
+                chosen_type.innerHTML=" translator enabled"
                 serverURL=storageURL[i].u
                 return serverURL
             }
         }
-            return tester.innerHTML=" We dont have this translator yet";
+            return chosen_type.innerHTML=" We dont have this translator yet";
     }else{
-        return tester.innerHTML="Please select a translator from below";
+        return chosen_type.innerHTML="Please select a translator from below";
     }
 });
 // ======================fina url creator==========================
@@ -45,14 +44,21 @@ function errorHandler(error) {
     console.log("error occured", error);
     output.innerHTML="Something is wrong with the server!Please try again later."
 }
-translate_btn.addEventListener("click", ()=>{
-    translate_btn.innerHTML="Translate";
+translator.addEventListener("click", ()=>{
+    if(input_text.value.length<1){
+        output.innerHTML = 'Please enter some data to translate it';
+        setTimeout(()=>{
+            output.innerHTML = '';
+        },2000)
+    }
+    else{
         fetch(createURL(input_text.value))
-       .then(response =>response.json())
-       .then(json=>{
+        .then(response =>response.json())
+        .then(json=>{
         output.innerText = json.contents.translated;
         })
         .catch(errorHandler)
+    }
 })
 
 
