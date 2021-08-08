@@ -10,7 +10,6 @@ body{
     background: url("https://www.geartranslations.com/blog/img/estrategias-de-traduccion.png") no-repeat center center/cover;
     text-align: center;
     position: relative;
-    overflow: auto;
     margin: auto;
 }
 ul{
@@ -33,7 +32,7 @@ header,footer{
     color: rgb(11, 13, 15);
     padding: 20px;
 }
-#tester
+#chosen_type
 {
     color: rgb(14, 175, 36);
 }
@@ -85,7 +84,7 @@ header,footer{
     border: 1px solid;
 }
 .data{
-    padding: 50px 30px;
+    padding: 30px;
 }
 #page{
     color: rgb(238, 74, 9);
@@ -101,6 +100,16 @@ header,footer{
 .btn:hover{
     color: rgb(178, 6, 212);
     transform: translateY(1px);
+}
+footer ul{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+footer a{
+    cursor: pointer;
+    padding-left: 10px;
 }
 
 /* mobile */
