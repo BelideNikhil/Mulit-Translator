@@ -29,7 +29,7 @@ select.addEventListener('click', function () {
                 serverURL=storageURL[i].u
                 return serverURL
             }
-        }
+        }   box2.style.display="none";
             return chosen_type.innerHTML=" We dont have this translator yet";
     }else{
         return chosen_type.innerHTML="Please select a translator from below";
