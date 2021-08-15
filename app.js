@@ -21,12 +21,12 @@ let serverURL;
 select.addEventListener('click', function () {
     let keys=translate_type.value;
     if(keys!=''){
-        box2.style.display="grid";
         for(let i=0;i<storageURL.length;i++){
             let holder=storageURL[i].k;
             if(keys.toUpperCase()===holder.toUpperCase()){
                 chosen_type.innerHTML=" translator enabled"
                 serverURL=storageURL[i].u
+                box2.style.display="grid";
                 return serverURL
             }
         }   box2.style.display="none";
@@ -36,8 +36,9 @@ select.addEventListener('click', function () {
     }
 });
 // ======================fina url creator==========================
-function createURL(){
-   return serverURL +"?"+"text=" +input_text.value;
+function createURL(input){
+    console.log(serverURL +"?"+"text=" +input)
+   return serverURL +"?"+"text=" +input;
 }
 
 function errorHandler(error) {
