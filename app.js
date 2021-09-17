@@ -5,7 +5,6 @@ let output=document.querySelector("#output");
 let contentBox=document.querySelector(".container")
 contentBox.style.display="none"
 let serverURL;
-let x=10;
 
 let storageURL={
     yoda:"https://api.funtranslations.com/translate/yoda.json",
