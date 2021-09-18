@@ -10,7 +10,7 @@ body{
     text-align: center;
     position: relative;
     margin: auto;
-    height: 100vh;
+    min-height: 100vh;
     background: -webkit-linear-gradient(to right, #2c3e50, #a4b2bb);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #2c3e50, #aab1b6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
@@ -96,10 +96,20 @@ header,footer{
     color: rgb(178, 6, 212);
     transform: translateY(1px);
 }
-footer{
+/* footer{
     position: fixed;
     bottom: 0;
     width: 100%;
+} */
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    height: 2rem;
+    line-height: 2rem;
+    display: flex;
+    justify-content: center;
 }
 footer ul{
     display: flex;
@@ -109,7 +119,6 @@ footer ul{
 }
 footer li{
     padding:10px;
-    border-right: 2px solid blueviolet;
 }
 footer a{
     cursor: pointer;
