@@ -75,7 +75,7 @@ header,footer{
     margin-bottom: 10px;
 }
 #output{
-    min-height: 100px;
+    min-height: 80px;
     border: 1px solid black;
 }
 .data{
